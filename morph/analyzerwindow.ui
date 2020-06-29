@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AnalyzerWindow</class>
+ <widget class="QMainWindow" name="AnalyzerWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1280</width>
+    <height>960</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>CellCounter</string>
+  </property>
+  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1280</width>
+     <height>23</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <property name="movable">
+    <bool>false</bool>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>64</width>
+     <height>64</height>
+    </size>
+   </property>
+   <property name="floatable">
+    <bool>true</bool>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionSave"/>
+   <addaction name="actionHiden"/>
+   <addaction name="actionExpand"/>
+   <addaction name="actionCollapse"/>
+   <addaction name="actionCommit"/>
+   <addaction name="actionCapture"/>
+  </widget>
+  <action name="actionHiden">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../resource.qrc">
+     <normaloff>:/icons/layout.collapse.png</normaloff>
+     <normalon>:/icons/layout.expand.png</normalon>:/icons/layout.collapse.png</iconset>
+   </property>
+   <property name="text">
+    <string>Hiden</string>
+   </property>
+   <property name="toolTip">
+    <string>隐藏细胞大图</string>
+   </property>
+  </action>
+  <action name="actionReport">
+   <property name="icon">
+    <iconset resource="../resource.qrc">
+     <normaloff>:/icons/report.png</normaloff>:/icons/report.png</iconset>
+   </property>
+   <property name="text">
+    <string>Report</string>
+   </property>
+   <property name="toolTip">
+    <string>生成报告</string>
+   </property>
+  </action>
+  <action name="actionExpand">
+   <property name="icon">
+    <iconset resource="../resource.qrc">
+     <normaloff>:/icons/collapse.all.png</normaloff>:/icons/collapse.all.png</iconset>
+   </property>
+   <property name="text">
+    <string>Expand</string>
+   </property>
+   <property name="toolTip">
+    <string>展开细胞分类信息</string>
+   </property>
+  </action>
+  <action name="actionCollapse">
+   <property name="icon">
+    <iconset resource="../resource.qrc">
+     <normaloff>:/icons/expand.all.png</normaloff>:/icons/expand.all.png</iconset>
+   </property>
+   <property name="text">
+    <string>Collapse</string>
+   </property>
+   <property name="toolTip">
+    <string>折叠细胞分类信息</string>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="icon">
+    <iconset>
+     <normalon>:/icons/save.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>Save</string>
+   </property>
+   <property name="toolTip">
+    <string>保存结果</string>
+   </property>
+  </action>
+  <action name="actionCapture">
+   <property name="icon">
+    <iconset>
+     <normalon>:/icons/image.collection.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>Capture</string>
+   </property>
+   <property name="toolTip">
+    <string>抓图</string>
+   </property>
+  </action>
+  <action name="actionCommit">
+   <property name="icon">
+    <iconset resource="../resource.qrc">
+     <normaloff>:/icons/commit2.png</normaloff>:/icons/commit2.png</iconset>
+   </property>
+   <property name="text">
+    <string>Commit</string>
+   </property>
+   <property name="toolTip">
+    <string>提交审核结果</string>
+   </property>
+  </action>
+  <action name="actionMarkCell">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../resource.qrc">
+     <normaloff>:/icons/uncheckmark.png</normaloff>
+     <normalon>:/icons/checkmark.png</normalon>:/icons/uncheckmark.png</iconset>
+   </property>
+   <property name="text">
+    <string>MarkCell</string>
+   </property>
+   <property name="toolTip">
+    <string>显示细胞标记</string>
+   </property>
+  </action>
+  <action name="actionshowContour">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../resource.qrc">
+     <normaloff>:/icons/contour_off.png</normaloff>
+     <normalon>:/icons/contour_on.png</normalon>
+     <disabledoff>:/icons/contour_off.png</disabledoff>:/icons/contour_off.png</iconset>
+   </property>
+   <property name="text">
+    <string>showContour</string>
+   </property>
+   <property name="toolTip">
+    <string>显示细胞轮廓标记</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="../resource.qrc"/>
+ </resources>
+ <connections/>
+</ui>
