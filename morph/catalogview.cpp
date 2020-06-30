@@ -48,10 +48,6 @@ void CatalogView::setContent(const QMap<int, CategoryItem>& typeMap, const QList
 
     for (auto iter = typeMap.begin(); iter != typeMap.end(); ++iter)
     {
-//        if (iter.key() > 23)
-//        {
-//            break;
-//        }
         auto group = new CellGroupBox(this);
         group->setSourceModel(model);
 #if 0
@@ -170,14 +166,13 @@ void CatalogView::onSigSelectCell(int cellId)
             cellGroup = group;
         }
     }
-
-    // 获取要选中的cell所在的group对应的模型(proxyModel):
+    // 使此group可见.
+    ui->scrollArea->ensureWidgetVisible(cellGroup);
+    // 选中细胞ITEM
     auto groupModel = qobject_cast<QSortFilterProxyModel *>(cellGroup->view()->model());
-    // 将全局的index转化为在proxy中的index:
     auto groupIndex = groupModel->mapFromSource(cellIndex);
-
     cellGroup->view()->selectionModel()->select(groupIndex,QItemSelectionModel::Select);
-
+    // 使此ITEM可见...
 
 }
 

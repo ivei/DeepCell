@@ -231,21 +231,19 @@ void AnalyzerWindow::initialize(DeepLabel *provider, const SlideItem& slide)
     connect(cellShowPage->view(), &ImageView::captured, this, &AnalyzerWindow::onCaptured);
 
     //cellShowPage->initialize(result, provider);
-
+    // 加入细胞
     connect(catalogView->sourceModel(), &CellListModel::cellAdded, cellShowPage, &CellShowPage::onCellAdded);
+    // 删除细胞
     connect(catalogView->sourceModel(), &CellListModel::cellRemoved, cellShowPage, &CellShowPage::onCellDeleted);
     connect(catalogView->sourceModel(), &CellListModel::cellTypeChanged, cellShowPage, &CellShowPage::onCellTypeChanged);
-    // 选择了细胞的映射.
+    // 在分类视图中双击细胞的映射
     connect(catalogView, &CatalogView::cellSelected, cellShowPage, &CellShowPage::onCellSelected);
     connect(ui->actionHiden, &QAction::triggered, this, [this](bool checked){cellShowPage->setVisible(checked);});
     connect(ui->actionMarkCell, &QAction::toggled, cellShowPage, &CellShowPage::onCellShowMarkChanged);
     connect(ui->actionshowContour, &QAction::toggled, cellShowPage, &CellShowPage::onCellShowCounterChanged);
 
 
-    // 来自图片视图的双击事件. 在ImageView中双击细胞, 在CatalogView中需要更新选中.
-//    connect(cellShowPage->view(), &ImageView::doubleClicked, [](int cellId){
-//        TRACE() << "double clicked at cell " << cellId;
-//    });
+    // 在视野视图中双击细胞的映射, 在ImageView中双击细胞, 在CatalogView中需要更新选中.
     connect(cellShowPage->view(), &ImageView::doubleClicked, catalogView, &CatalogView::onSigSelectCell);
     // 映射来自CellShowPage的删除细胞消息
     // 暂时未支持Undo/Redo框架. 以后考虑
