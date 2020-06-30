@@ -46,72 +46,13 @@ void CellGroupBox::setType(const QString &text, int type)
     typeId = type;
     filterModel->setFilter(type);
     ui->pushButton->setText(QString("%1(%2)").arg(text).arg(filterModel->rowCount()));
-#if 1
+
     int id = type % PALATTE::ColorPalette.size();
     QString color = PALATTE::ColorPalette[id].firstColor;
     QString styleSheet = QString("QLabel{background-color: %1}").arg(color);
     TRACE() << styleSheet;
     ui->label->setStyleSheet(styleSheet);
-#else
-    switch (type)
-    {
-    case 1:
-        ui->label->setStyleSheet("QLabel{background-color: red}");
-        break;
-    case 2:
-        ui->label->setStyleSheet("QLabel{background-color: green}");
-        break;
-    case 3:
-        ui->label->setStyleSheet("QLabel{background-color: blue}");
-        break;
-    case 4:
-        ui->label->setStyleSheet("QLabel{background-color: darkred}");
-        break;
-    case 5:
-        ui->label->setStyleSheet("QLabel{background-color: cyan}");
-        break;
-    case 6:
-        ui->label->setStyleSheet("QLabel{background-color: yellow}");
-        break;
-    case 7:
-        ui->label->setStyleSheet("QLabel{background-color: magenta}");
-        break;
-    case 8:
-        ui->label->setStyleSheet("QLabel{background-color: darkgreen}");
-        break;
-    case 9:
-        ui->label->setStyleSheet("QLabel{background-color: rgb(85,102,0)}");
-        break;
-    case 10:
-        ui->label->setStyleSheet("QLabel{background-color: darkblue}");
-        break;
-    case 11:
-        ui->label->setStyleSheet("QLabel{background-color: darkgray}");
-        break;
-    case 12:
-        ui->label->setStyleSheet("QLabel{background-color: rgb(160,82,45)}");
-        break;
-    case 13:
-        ui->label->setStyleSheet("QLabel{background-color: darkmagenta}");
-        break;
-    case 14:
-        ui->label->setStyleSheet("QLabel{background-color: darkcyan}");
-        break;
-    case 15:
-        ui->label->setStyleSheet("QLabel{background-color: gray}");
-        break;
-    case 16:
-        ui->label->setStyleSheet("QLabel{background-color: black}");
-        break;
-    case 17:
-        ui->label->setStyleSheet("QLabel{background-color: rgb(139,69,0)}");
-        break;
-    default:
-        ui->label->setStyleSheet("QLabel{background-color: #FF9900}");
-        break;
-    }
 
-#endif
 }
 
 /**
@@ -181,6 +122,7 @@ void CellGroupBox::expand()
     ui->pushButton->clicked(false);
 }
 
+#if 0
 #include <QDebug>
 void CellGroupBox::showContextMenu(const QPoint &pos)
 {
@@ -202,3 +144,4 @@ void CellGroupBox::showContextMenu(const QPoint &pos)
 
     contextMenu.exec(QCursor::pos());
 }
+#endif

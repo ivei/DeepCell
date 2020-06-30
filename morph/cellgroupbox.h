@@ -31,7 +31,7 @@ public slots:
     void expand();
 
 protected slots:
-    void showContextMenu(const QPoint &pos);
+    //void showContextMenu(const QPoint &pos);
     void onSelectionChanged(const QItemSelection &selected, const QItemSelection &deselected);
 private:
     Ui::CellGroupBox *ui;
