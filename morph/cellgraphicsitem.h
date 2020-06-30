@@ -3,7 +3,7 @@
 #include <QGraphicsPolygonItem>
 
 #include "../srv/cellitem.h"
-#include "../srv/categoryitem.h"
+#include "../srv/category.h"
 
 class DeepLabel;
 

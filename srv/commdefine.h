@@ -1,6 +1,7 @@
 ﻿#ifndef COMMDEFINE_H
 #define COMMDEFINE_H
 #include <QString>
+#include <QColor>
 /** @file commdefine.h
  *  @brief  定义程序使用到的全局常量定义.
  *  @note
@@ -79,6 +80,54 @@ namespace ProgressDefine {
         InitShowPage,
         Buddy = InitShowPage
     };
+}
+
+namespace PALATTE {
+    //! 定义调色板. https://www.sojson.com/web/page.html
+    struct ColorPair{
+        QString firstColor;
+        QString secondColor;
+    };
+
+    const QList<ColorPair> ColorPalette{
+         {"#000000", "#FFFFFF"}     // 黑色, black    白色, white
+        ,{"#00FFFF", "#000000"}     // 青色 cyan      黑色, black
+        ,{"#008B8B", "#FFFFFF"}     // 暗青色	darkcyan    白色, white
+        ,{"#FF0000", "#FFFFFF"}     // 红色	red     白色, white
+        ,{"#8B0000", "#FFFFFF"}     // 暗红色	darkred : 白色, white
+        ,{"#FF00FF", "#FFFFFF"}     // 紫红色fuchsia(magenta) : 白色, white
+        ,{"#8B008B", "#FFFFFF"}     // 暗洋红	darkmagenta : 白色, white
+        ,{"#00FF00", "#000000"}     // 绿色 green  :  黑色 black
+        ,{"#006400", "#FFFFFF"}     // 暗绿色	darkgreen : 白色white
+        ,{"#FFFF00", "#000000"}     // 黄色	yellow  :  黑色 black
+        ,{"#8B8B00", "#000000"}     // 深黄色 darkyellow  :  黑色 black
+        ,{"#0000FF", "#FFFFFF"}     // 蓝色   blue
+        ,{"#00008B", "#FFFFFF"}     // 暗蓝色	darkblue
+        ,{"#808080", "#FFFFFF"}     // 灰色	gray
+        ,{"#A9A9A9", "#FFFFFF"}     // 暗灰色	darkgray
+        ,{"#D3D3D3", "#000000"}     // 浅灰	lightgray
+        ,{"#A52A2A", "#FFFFFF"}     // 褐玫瑰红	brown
+        ,{"#996600", "#FFFFFF"}     // 褐色
+        ,{"#D2691E", "#FFFFFF"}     // 巧可力色	chocolate
+        ,{"#FF1493", "#FFFFFF"}     // 深粉红色	deeppink
+        ,{"#FFC0CB", "#000000"}     // 粉红色	pink
+        ,{"#4B0082", "#FFFFFF"}     // 靛青色	indigo
+        ,{"#8A2BE2", "#FFFFFF"}     // 紫罗兰色	blueviolet
+        ,{"#FF4500", "#FFFFFF"}     // 红橙色	orangered
+        ,{"#FF8C00", "#FFFFFF"}     // 暗桔黄色	darkorange
+        ,{"#B8860B", "#FFFFFF"}     // 暗金黄色	darkgoldenrod
+        ,{"#FFD700", "#000000"}     // 金色	gold
+        ,{"#FFFFE0", "#000000"}     // 亮黄色	lightyellow
+        ,{"#808000", "#000000"}     // 橄榄色	olive
+        ,{"#008080", "#FFFFFF"}     // 水鸭色	green(teal)
+        ,{"#00FF7F", "#000000"}     // 春绿色	springgreen
+        ,{"#228B22", "#FFFFFF"}     // 森林绿	forestgreen
+        ,{"#7FFFD4", "#000000"}     // 碧绿色	aquamarine
+        ,{"#4169E1", "#FFFFFF"}     // 皇家蓝	royalblue
+        ,{"#708090", "#FFFFFF"}     // 灰石色	slategray
+        ,{"#FFFFFF", "#000000"}       // 白色, white
+    };
+
 }
 
 #endif // COMMDEFINE_H

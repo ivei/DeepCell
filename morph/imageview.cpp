@@ -8,7 +8,7 @@
 #include "cellgraphicsitem.h"
 #include "imageview.h"
 #include "toolkit.h"
-#include "../srv/categoryitem.h"
+#include "../srv/category.h"
 #include "../srv/dbgutility.h"
 
 #pragma execution_character_set("utf-8")

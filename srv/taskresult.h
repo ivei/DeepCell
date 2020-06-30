@@ -4,7 +4,7 @@
 #include <QMap>
 #include "cellitem.h"
 #include "imageitem.h"
-#include "categoryitem.h"
+#include "category.h"
 
 
 

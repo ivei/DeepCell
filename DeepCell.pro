@@ -55,9 +55,8 @@ SOURCES += \
     morph/tilegraphicitem.cpp \
     morph/tileprovider.cpp \
     morph/toolkit.cpp \
-    celllistview.cpp \
+    morph/celllistview.cpp \
     srv/afxapp.cpp \
-    srv/categoryitem.cpp \
     srv/cellitem.cpp \
     srv/datalist.cpp \
     srv/deepengine.cpp \
@@ -71,7 +70,8 @@ SOURCES += \
     srv/utilities.cpp \
     main.cpp \
     frame/splashwndext.cpp \
-    frame/aboutdialog.cpp
+    frame/aboutdialog.cpp \
+    srv/category.cpp
 
 
 HEADERS += \
@@ -105,9 +105,8 @@ HEADERS += \
     morph/tilegraphicitem.h \
     morph/tileprovider.h \
     morph/toolkit.h \
-    celllistview.h \
+    morph/celllistview.h \
     srv/afxapp.h \
-    srv/categoryitem.h \
     srv/cellitem.h \
     srv/commdefine.h \
     srv/datalist.h \
@@ -122,7 +121,9 @@ HEADERS += \
     srv/taskresult.h \
     srv/utilities.h \
     frame/splashwndext.h \
-    frame/aboutdialog.h
+    frame/aboutdialog.h \
+    version.h \
+    srv/category.h
 
 
 FORMS += \

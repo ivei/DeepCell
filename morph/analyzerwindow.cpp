@@ -11,7 +11,7 @@
 #include "../frame/simpleprogressdlg.h"
 #include "../frame/splashwndext.h"
 #include "../srv/afxapp.h"
-#include "../srv/categoryitem.h"
+#include "../srv/category.h"
 #include "../srv/cellitem.h"
 #include "../srv/commdefine.h"
 #include "../srv/dbgutility.h"

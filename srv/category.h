@@ -1,5 +1,5 @@
-﻿#ifndef CELLTYPEITEM_H
-#define CELLTYPEITEM_H
+﻿#ifndef CATEGORY_H
+#define CATEGORY_H
 
 #include <QMetaType>
 #include <QString>
@@ -28,4 +28,4 @@ typedef QMap<QString, CategoryFamily> Catalog;
 //! 从一个总的集合中得到指定family的分类子集定义. 注意: 白细胞 和巨核细胞被合并处理.
 CategoryFamily filtFamily(const CategoryFamily& catalog, const QString& familyId);
 
-#endif // CELLTYPEITEM_H
+#endif // CATEGORY_H

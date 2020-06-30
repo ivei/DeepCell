@@ -11,6 +11,7 @@
 #include "../srv/dbgutility.h"
 #include "../srv/deepservice.h"
 #include "../srv/deeplabel.h"
+#include "../srv/commdefine.h"
 
 #pragma execution_character_set("utf-8")
 
@@ -25,10 +26,12 @@ static QVector< std::pair<QColor, QColor> > colorDef{
             std::make_pair(Qt::yellow,  Qt::black),  // 6
             std::make_pair(Qt::magenta, Qt::black),  // 7
             std::make_pair(Qt::darkGreen,Qt::black),  // 8
-            std::make_pair(Qt::darkYellow,Qt::white),  // 9
+            //std::make_pair(Qt::darkYellow,Qt::white),  // 9
+            std::make_pair(QColor(85,102,0), Qt::white),    // 9
             std::make_pair(Qt::darkBlue,    Qt::white),  // 10
             std::make_pair(Qt::darkGray,    Qt::white),  // 11
-            std::make_pair(Qt::lightGray,   Qt::black),  // 12
+            //std::make_pair(Qt::lightGray,   Qt::black),  // 12
+            std::make_pair(QColor(160,82,45),   Qt::black),  // 12
             std::make_pair(Qt::darkMagenta, Qt::white),  // 13
             std::make_pair(Qt::darkCyan,    Qt::white),  // 14
             std::make_pair(Qt::gray,        Qt::white),  // 15
@@ -125,16 +128,28 @@ void CellGraphicsItem::setColor(int type)
 
 QColor CellGraphicsItem::getPenColor(int type)
 {
+#if 0
     int id = type % colorDef.size();
     QColor col = colorDef.value(id, std::make_pair(Qt::white, Qt::black)).first;
+#else
+    int id = type % PALATTE::ColorPalette.size();
+    QColor col = QColor(PALATTE::ColorPalette[id].firstColor);
+#endif
     col.setAlpha(127);
+    TRACE() << "type=" << type << "col=" << col << col.rgb();
     return col;
 }
 
 QColor CellGraphicsItem::getFontColor(int type)
 {
+#if 0
     int id = type % colorDef.size();
     return colorDef.value(id, std::make_pair(Qt::white, Qt::black)).second;
+#else
+    int id = type % PALATTE::ColorPalette.size();
+    QColor color = QColor(PALATTE::ColorPalette[id].secondColor);
+    return color;
+#endif
 }
 
 

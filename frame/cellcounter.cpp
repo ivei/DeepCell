@@ -15,8 +15,11 @@
 #include "../srv/deepengine.h"
 #include "../srv/deepservice.h"
 #include "../srv/dbgutility.h"
-
+#include "../version.h"
 #pragma execution_character_set("utf-8")
+
+
+const QString detailText ="<html><head/><body><p><span style=\" font-weight:600;\">软件名称</span>: 深析智能细胞形态显微镜图像扫描分析软件</p><p><span style=\" font-weight:600;\">软件型号</span>: CellCounter</p><p><span style=\" font-weight:600;\">版本信息</span>:</p><p><span style=\" font-weight:600;\">发布版本</span>: V%1.%2.%3.%4</p><p><span style=\" font-weight:600;\">软件说明</span>: 本软件为DCS-1000细胞医学图像分析系统配套专用软件</p></body></html>";
 
 CellCounter::CellCounter(QWidget *parent) :
     QMainWindow(parent),
@@ -30,6 +33,7 @@ CellCounter::CellCounter(QWidget *parent) :
     ui->listWidget->setCurrentRow(0);
     ui->listView->setItemDelegate(new ConnectionItemDelegate(this));
     ui->listView->setModel(model);
+    ui->detaiLabel->setText(detailText.arg(VER_V).arg(VER_R).arg(VER_C).arg(VER_B));
     connect(ui->listView, &QListView::doubleClicked, this, &CellCounter::openConnection);
 
     connect(ui->add, &QPushButton::clicked, this, &CellCounter::addConnection);

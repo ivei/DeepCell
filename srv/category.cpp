@@ -1,5 +1,5 @@
 ﻿#include <QJsonObject>
-#include "categoryitem.h"
+#include "category.h"
 #include "commdefine.h"
 #pragma execution_character_set("utf-8")
 

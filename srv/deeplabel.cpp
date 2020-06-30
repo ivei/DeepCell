@@ -21,7 +21,7 @@
 #include "deepservice.h"
 #include "slideitem.h"
 #include "taskresult.h"
-#include "categoryitem.h"
+#include "category.h"
 #include "commdefine.h"
 #include <functional>
 
@@ -443,7 +443,6 @@ TaskResult DeepLabel::getTaskResultEx(const SlideItem& slide)
 {
     //QMap<int, CategoryItem> catalog;
     const QByteArray token = this->data()->token;
-    int progress = 0;
 
     // -=`======= 线程函数定义
     // 定义下载视野的缩略图的线程
@@ -782,7 +781,6 @@ QList<CellItem> DeepLabel::getSlideCells(const SlideItem &slide, const QString &
         // 即系并处理image的信息. 这里用得到
         auto imginfo = image.toObject().value("images").toObject();
         auto image_id = imginfo.value("id").toInt();
-        auto image_type = imginfo.value("image_type").toInt();
         auto level   = image.toObject().value("level").toInt();
         //auto cell_family = image_type==ImageItem::TypeMega ? TCellFamily::FamilyMega : TCellFamily::FamilyHema;
         // 处理每个细胞

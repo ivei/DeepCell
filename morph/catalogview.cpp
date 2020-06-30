@@ -12,7 +12,7 @@
 #include "celllistview.h"
 #include "../srv/cellitem.h"
 #include "../srv/deeplabel.h"
-#include "../srv/categoryitem.h"
+#include "../srv/category.h"
 #include "../srv/dbgutility.h"
 
 #pragma execution_character_set("utf-8")
@@ -54,7 +54,11 @@ void CatalogView::setContent(const QMap<int, CategoryItem>& typeMap, const QList
 //        }
         auto group = new CellGroupBox(this);
         group->setSourceModel(model);
+#if 0
         group->setType(iter->cnName, iter.key());
+#else
+        group->setType(QString("%1(%2)").arg(iter->cnName).arg(iter->typeNo), iter.key());
+#endif
         group->setVisible(false);
         layout->addWidget(group);
         connect(group->view(), &QListView::doubleClicked, this, [this](const QModelIndex&index){

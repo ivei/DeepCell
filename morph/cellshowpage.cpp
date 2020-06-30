@@ -7,7 +7,7 @@
 #include "morph/tilegraphicitem.h"
 
 #include "../srv/afxapp.h"
-#include "../srv/categoryitem.h"
+#include "../srv/category.h"
 #include "../srv/commdefine.h"
 #include "../srv/dbgutility.h"
 #include "../srv/deeplabel.h"

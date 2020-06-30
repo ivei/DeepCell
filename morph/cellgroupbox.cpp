@@ -6,6 +6,7 @@
 #include <QItemSelectionModel>
 #include <QDebug>
 #include "../srv/dbgutility.h"
+#include "../srv/commdefine.h"
 #include "celllistmodel.h"
 
 #pragma execution_character_set("utf-8")
@@ -45,6 +46,13 @@ void CellGroupBox::setType(const QString &text, int type)
     typeId = type;
     filterModel->setFilter(type);
     ui->pushButton->setText(QString("%1(%2)").arg(text).arg(filterModel->rowCount()));
+#if 1
+    int id = type % PALATTE::ColorPalette.size();
+    QString color = PALATTE::ColorPalette[id].firstColor;
+    QString styleSheet = QString("QLabel{background-color: %1}").arg(color);
+    TRACE() << styleSheet;
+    ui->label->setStyleSheet(styleSheet);
+#else
     switch (type)
     {
     case 1:
@@ -92,13 +100,18 @@ void CellGroupBox::setType(const QString &text, int type)
     case 15:
         ui->label->setStyleSheet("QLabel{background-color: gray}");
         break;
-    case 17:
+    case 16:
         ui->label->setStyleSheet("QLabel{background-color: black}");
         break;
+    case 17:
+        ui->label->setStyleSheet("QLabel{background-color: rgb(139,69,0)}");
+        break;
     default:
-        ui->label->setStyleSheet("QLabel{background-color: white}");
+        ui->label->setStyleSheet("QLabel{background-color: #FF9900}");
         break;
     }
+
+#endif
 }
 
 /**

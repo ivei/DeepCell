@@ -8,7 +8,7 @@
 #include <QJsonObject>
 #include <QPixmap>
 
-#include "categoryitem.h"
+#include "category.h"
 #include "dbgutility.h"
 
 

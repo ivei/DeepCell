@@ -6,7 +6,7 @@
 #include <QJsonValue>
 #include <QJsonDocument>
 #include <QDebug>
-#include "categoryitem.h"
+#include "category.h"
 #include "dbgutility.h"
 #pragma execution_character_set("utf-8")
 

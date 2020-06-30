@@ -207,7 +207,7 @@ background-color: rgb(61, 62, 62);
   <customwidget>
    <class>CellListView</class>
    <extends>QListView</extends>
-   <header>celllistview.h</header>
+   <header location="global">morph/celllistview.h</header>
   </customwidget>
  </customwidgets>
  <resources>

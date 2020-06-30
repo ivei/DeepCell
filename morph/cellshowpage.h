@@ -11,7 +11,7 @@
 #include <QListWidget>
 #include <QWidget>
 
-#include "../srv/categoryitem.h"
+#include "../srv/category.h"
 #include "../srv/cellitem.h"
 #include "../srv/imageitem.h"
 
