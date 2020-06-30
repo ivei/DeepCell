@@ -21,7 +21,7 @@ public:
         // Enable the use of qgraphicsitem_cast with this item.
         return Type;
     }
-    CellGraphicsItem(const CellItem& item, DeepLabel* handler, const QMap<int, CategoryItem>& categorys, bool showMark, bool showCounter);
+    CellGraphicsItem(const CellItem& item, DeepLabel* handler/*, const QMap<int, CategoryItem>& categorys*/, bool showMark, bool showCounter);
     void initialize();
     //! 返回里面保存的CellItem的信息
     CellItem getItem() const;
@@ -56,7 +56,7 @@ protected:
     QColor getFontColor(int type);
 private:
     CellItem item;
-    QMap<int, CategoryItem> _categorys; //! 细胞类别字典
+    //QMap<int, CategoryItem> _categorys; //! 细胞类别字典
     bool   _showMark;       //! 绘制控制参数, 控制是否绘制细胞的方框和外边界
     bool   _showCounter;    //! 绘制控制参数, 控制是否绘制细胞的轮廓
     DeepLabel *_handler;

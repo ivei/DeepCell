@@ -207,7 +207,7 @@ void CellShowPage::initializeNew(const TaskResult &result, DeepLabel *handler)
                 continue;
             }
 
-            auto cell_item = new CellGraphicsItem(cell, handler, this->categorys, this->cellMarkShow(),this->cellContourShow());
+            auto cell_item = new CellGraphicsItem(cell, handler, /*this->categorys, */this->cellMarkShow(),this->cellContourShow());
             cur_scene->addItem(cell_item);
 
             CellSetItem cellInfo;
@@ -246,7 +246,7 @@ void CellShowPage::onCellAdded(const CellItem &item)
     IF_RETURN_2(this->cellSet.contains(item.uid()), QString("Error. the cell to add (id=^1) has exist in cell set").arg(item.uid()));
 
 
-    auto newCell = new CellGraphicsItem(item, this->handler, this->categorys, this->cellMarkShow(), this->cellContourShow());
+    auto newCell = new CellGraphicsItem(item, this->handler, /*this->categorys,*/ this->cellMarkShow(), this->cellContourShow());
     this->scene()->addItem(newCell);
 
 

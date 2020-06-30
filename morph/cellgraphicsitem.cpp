@@ -41,12 +41,12 @@ static QVector< std::pair<QColor, QColor> > colorDef{
 };
 
 
-CellGraphicsItem::CellGraphicsItem(const CellItem& item, DeepLabel *handler, const QMap<int, CategoryItem> &categorys, bool showMark, bool showCounter)
+CellGraphicsItem::CellGraphicsItem(const CellItem& item, DeepLabel *handler/*, const QMap<int, CategoryItem> &categorys*/, bool showMark, bool showCounter)
     : QGraphicsPolygonItem(nullptr)
     , QObject()
     //, QObject (nullptr)
     , item(item)
-    , _categorys(categorys)
+    //, _categorys(categorys)
     , _showMark(showMark)
     , _showCounter(showCounter)
     , _handler(handler)
